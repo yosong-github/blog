@@ -33,3 +33,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--c-scrollbar-hover);
 }
+
+pre {
+  background-color: rgb(242, 242, 242) !important;
+}

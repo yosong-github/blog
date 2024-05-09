@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:21:46
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 17:25:35
+ * @LastEditTime: 2024-05-09 17:36:41
  * @FilePath: \blog\nuxt.config.ts
  */
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -23,14 +23,8 @@ export default defineNuxtConfig({
 
   content: {
     highlight: {
-      theme: {
-        // Default theme (same as single string)
-        default: 'vitesse-light',
-        // Theme used if `html.dark`
-        dark: 'vitesse-dark',
-        // Theme used if `html.sepia`
-        sepia: 'monokai',
-      },
+      // Theme used in all color schemes.
+      theme: 'github-light',
     },
   },
 
