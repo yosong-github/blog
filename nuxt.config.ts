@@ -9,7 +9,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@unocss/nuxt', "@nuxt/content"],
+  modules: ['@unocss/nuxt', '@nuxt/content'],
 
   css: ['@unocss/reset/tailwind.css', './assets/common.css'],
 
@@ -18,6 +18,13 @@ export default defineNuxtConfig({
       nuxtLink: {
         activeClass: 'current-nav',
       },
+    },
+  },
+
+  content: {
+    highlight: {
+      // Theme used in all color schemes.
+      theme: 'github-light',
     },
   },
 
