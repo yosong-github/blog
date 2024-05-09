@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 16:12:55
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 17:10:03
+ * @LastEditTime: 2024-05-09 17:12:57
  * @FilePath: \blog\components\doc\DocToc.vue
 -->
 <script setup lang="ts">
@@ -43,7 +43,7 @@ onMounted(() => {
           <ul v-for="(h3, h3Index) in h2.children" :key="h3Index">
             <li class="list-none relative flex items-center">
               <a
-                :class="{ 'text-Accent': h2.id === currentId }"
+                :class="{ 'text-Accent': h3.id === currentId }"
                 :href="`#${h3.id}`">
                 {{ h3.text }}</a
               >
