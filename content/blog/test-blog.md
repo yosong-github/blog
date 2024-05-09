@@ -1,10 +1,9 @@
 ---
-date: 2022-08-14 12:15:49
+date: 2024-05-09 21:48:49
 tags:
-  - unxt
+  - nuxt
   - 前端
-title: 25 个 Nuxt3 开发技巧
-en-title: 25-time-saving-tips-for-nuxt3
+title: 测试文章
 ---
 
 我们知道 Nuxt 是一款出色的工具。

@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 
   modules: ['@unocss/nuxt', '@nuxt/content'],
 
-  css: ['@unocss/reset/tailwind.css', './assets/common.css'],
+  css: ['@unocss/reset/tailwind.css', './assets/common.css', 'aos/dist/aos.css'],
 
   experimental: {
     defaults: {
