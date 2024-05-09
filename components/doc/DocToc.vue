@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 16:12:55
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 16:29:59
+ * @LastEditTime: 2024-05-09 17:10:03
  * @FilePath: \blog\components\doc\DocToc.vue
 -->
 <script setup lang="ts">
@@ -42,10 +42,11 @@ onMounted(() => {
         <template v-if="h2.children && h2.children.length > 0">
           <ul v-for="(h3, h3Index) in h2.children" :key="h3Index">
             <li class="list-none relative flex items-center">
-              <div
-                v-if="h3.id === currentId"
-                class="absolute right-full i-icon-park-outline-right-small" />
-              <a :href="`#${h3.id}`"> {{ h3.text }}</a>
+              <a
+                :class="{ 'text-Accent': h2.id === currentId }"
+                :href="`#${h3.id}`">
+                {{ h3.text }}</a
+              >
             </li>
           </ul>
         </template>
