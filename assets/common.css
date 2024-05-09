@@ -1,0 +1,35 @@
+:root {
+  --color-accent: #3f51b5;
+
+  --c-bg: #fafafa;
+  --c-scrollbar: #ccc;
+  --c-scrollbar-hover: #aaa;
+}
+
+.current-nav {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: var(--c-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-scrollbar-hover);
+}
