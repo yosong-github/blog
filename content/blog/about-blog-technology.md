@@ -1,5 +1,5 @@
 ---
-date: 2024-05-09 21:50:49
+date: '2024-05-09 21:50:49'
 tags:
   - nuxt
   - nuxt-content

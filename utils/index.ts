@@ -1,12 +1,12 @@
-import type { ParsedContent } from '@nuxt/content/types'
-
 /*
  * @Author: yosong
  * @Date: 2024-05-09 14:03:38
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-10 14:40:15
+ * @LastEditTime: 2024-05-10 17:25:34
  * @FilePath: \blog\utils\index.ts
  */
+import type { ParsedContent } from '@nuxt/content/types'
+
 export function insertYearToPosts(posts: any) {
   let currentYear = -1
   return posts.reduce((posts: any, post: any) => {
