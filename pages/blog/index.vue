@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:47:28
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 15:39:27
+ * @LastEditTime: 2024-05-10 11:09:48
  * @FilePath: \blog\pages\blog\index.vue
 -->
 <template>
@@ -29,5 +29,13 @@ const posts = ref([] as any)
 
 getIncludedYearPosts('blog').then((res) => {
   posts.value = res
+})
+
+useHead({
+  title: 'yosong - blog',
+  meta: [
+    { name: 'description', content: 'yosong blog list' },
+    { name: 'keywords', content: 'yosong blog' },
+  ],
 })
 </script>

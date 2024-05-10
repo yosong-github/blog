@@ -1,8 +1,14 @@
+/*
+ * @Author: yosong
+ * @Date: 2024-05-09 14:03:38
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2024-05-10 11:08:08
+ * @FilePath: \blog\utils\index.ts
+ */
 export function insertYearToPosts(posts: any) {
   let currentYear = -1
   return posts.reduce((posts: any, post: any) => {
     const year = new Date(post.date).getFullYear()
-    console.log(year)
 
     if (year !== currentYear && !isNaN(year)) {
       posts.push({

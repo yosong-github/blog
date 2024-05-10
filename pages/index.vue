@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:29:43
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 21:45:23
+ * @LastEditTime: 2024-05-10 11:08:48
  * @FilePath: \blog\pages\index.vue
 -->
 <template>
@@ -45,4 +45,12 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: 'yosong',
+  meta: [
+    { name: 'description', content: 'yosong' },
+    { name: 'keywords', content: 'yosong' },
+  ],
+})
+</script>
