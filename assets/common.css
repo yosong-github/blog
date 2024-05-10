@@ -37,3 +37,14 @@
 pre {
   background-color: rgb(242, 242, 242) !important;
 }
+
+@font-face {
+  font-family: 'blog';
+  src: url(./OperatorMonoSSmLigNerdFontAAEOPSLMDI-Book.88ea8017.woff2)
+    format('woff2');
+}
+
+/* 使用字体 */
+body {
+  font-family: 'blog', sans-serif;
+}
