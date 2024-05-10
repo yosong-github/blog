@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 16:12:55
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 17:12:57
+ * @LastEditTime: 2024-05-10 11:00:31
  * @FilePath: \blog\components\doc\DocToc.vue
 -->
 <script setup lang="ts">
@@ -26,7 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="fixed top-14 right-8% w-250px hidden xl:block">
+  <div class="fixed top-16 right-8% w-250px hidden xl:block">
     <ul>
       <li
         v-for="(h2, h2Index) in props.toc.links"
