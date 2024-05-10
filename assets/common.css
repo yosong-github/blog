@@ -4,6 +4,11 @@
   --c-bg: #fafafa;
   --c-scrollbar: #ccc;
   --c-scrollbar-hover: #aaa;
+
+  --common-transition: all 0.3s ease;
+  --common-rd: 0.5em;
+  --common-bg: #6974a729;
+  --common-bd: #c9c7c2;
 }
 
 .current-nav {
