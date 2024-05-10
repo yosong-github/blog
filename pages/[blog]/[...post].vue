@@ -2,8 +2,8 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 16:18:07
- * @FilePath: \blog\pages\blog\[...post].vue
+ * @LastEditTime: 2024-05-10 16:16:11
+ * @FilePath: \blog\pages\[blog]\[...post].vue
 -->
 <template>
   <div class="pb-10 prose">
@@ -28,5 +28,5 @@
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const post = 'blog/' + route.params.post[0]
+const post = route.params.blog + '/' + route.params.post[0]
 </script>
