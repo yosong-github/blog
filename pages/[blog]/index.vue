@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:47:28
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-10 16:31:34
+ * @LastEditTime: 2024-05-10 16:35:17
  * @FilePath: \blog\pages\[blog]\index.vue
 -->
 <template>
@@ -11,14 +11,14 @@
       <span>
         <span
           @click="typeCheck(key)"
-          class="cursor-pointer font-size-26px font-weight-bold"
+          class="cursor-pointer font-size-26px font-weight-bold mb-5"
           :class="{
             'color-#000': key === activeIndex,
             'color-#aaa': key !== activeIndex,
           }">
           {{ key }}
         </span>
-        <span class="mr-6">({{ _.length }})</span>
+        <span class="mr-6 mb-5">({{ _.length }})</span>
       </span>
     </template>
     <template v-for="it in posts[activeIndex]">
@@ -53,14 +53,16 @@ const typeCheck = (key: string | number) => {
   sessionStorage.setItem('activeIndex', String(key))
 }
 
-// 获取所有文章
-getPosts('/').then((res) => {
-  posts.value = res
-  if (sessionStorage.getItem('activeIndex') === null) {
-    activeIndex.value = Object.keys(res)[0]
-  } else {
-    activeIndex.value = sessionStorage.getItem('activeIndex')!
-  }
+onMounted(() => {
+  // 获取所有文章
+  getPosts('/').then((res) => {
+    posts.value = res
+    if (sessionStorage.getItem('activeIndex') === null) {
+      activeIndex.value = Object.keys(res)[0]
+    } else {
+      activeIndex.value = sessionStorage.getItem('activeIndex')!
+    }
+  })
 })
 
 useHead({
