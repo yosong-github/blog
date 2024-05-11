@@ -2,8 +2,8 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:47:28
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 14:05:46
- * @FilePath: \blog\pages\[blog]\index.vue
+ * @LastEditTime: 2024-05-11 14:59:40
+ * @FilePath: \blog\pages\[blogType]\index.vue
 -->
 <template>
   <div class="py-10">
@@ -13,8 +13,8 @@
           @click="typeCheck(key)"
           class="cursor-pointer font-size-26px font-weight-bold"
           :class="{
-            'color-#000': key === activeIndex,
-            'color-#aaa': key !== activeIndex,
+            'color-type-active': key === activeIndex,
+            'color-type': key !== activeIndex,
           }">
           <span>{{ String(key).trim() }}</span>
           <span class="mr-6 font-size-16px">({{ _.length }})</span>
@@ -27,7 +27,7 @@
           :to="it._file!.slice(0, -3)"
           class="flex justify-between items-start my-2 py-2 cursor-pointer">
           <span class="flex-1">{{ it.title }}</span>
-          <span class="w-100px font-size-12px ml-5 color-gray-500">{{
+          <span class="w-100px font-size-12px ml-5 color-#aaa">{{
             Dayjs(it.date).format('YYYY-MM-DD')
           }}</span>
         </NuxtLink>
