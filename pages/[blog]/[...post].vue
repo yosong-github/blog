@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 12:05:46
+ * @LastEditTime: 2024-05-11 12:31:30
  * @FilePath: \blog\pages\[blog]\[...post].vue
 -->
 <template>
@@ -57,6 +57,7 @@ onMounted(() => {
     comment: true,
     pageview: true,
     commentCount: true,
+    secureDomains: ['https://blog-3dq.pages.dev'],
   } as WalineInitOptions)
 })
 
