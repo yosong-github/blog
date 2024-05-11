@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:48:24
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 15:13:23
+ * @LastEditTime: 2024-05-11 15:26:41
  * @FilePath: \blog\layouts\cpns\NavBar.vue
 -->
 <template>
@@ -32,6 +32,10 @@ const themeRef = ref<HTMLElement>()
 // 主题切换函数
 const changeTheme = () => {
   document.querySelector('html')!.classList.toggle('dark')
+  localStorage.setItem(
+    'theme',
+    document.querySelector('html')!.classList.contains('dark') ? 'dark' : ''
+  )
 }
 const changeBtn = (func: any, $eve: any) => {
   const x = $eve.clientX

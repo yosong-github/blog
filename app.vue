@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:21:46
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 21:44:12
+ * @LastEditTime: 2024-05-11 15:27:52
  * @FilePath: \blog\app.vue
 -->
 <template>
@@ -20,5 +20,10 @@ onMounted(() => {
     easing: 'ease-in-out-back',
     duration: 1000,
   })
+
+  // 默认主题
+  let theme = localStorage.getItem('theme')
+
+  document.querySelector('html')!.setAttribute('class', theme || '')
 })
 </script>
