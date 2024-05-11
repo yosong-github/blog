@@ -2,8 +2,8 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 12:42:13
- * @FilePath: \blog\pages\[blog]\[...post].vue
+ * @LastEditTime: 2024-05-11 14:33:17
+ * @FilePath: \blog\pages\[blog-type]\[...post].vue
 -->
 <template>
   <div class="pb-10 prose">
@@ -37,7 +37,7 @@ import { useRoute } from 'vue-router'
 // import '@waline/client/style'
 
 const route = useRoute()
-const post = route.params.blog + '/' + route.params.post[0]
+const post = route.params.blogType + '/' + route.params.post[0]
 
 // const comment = ref<HTMLDivElement>()
 // const waline = ref<WalineInstance | null>()

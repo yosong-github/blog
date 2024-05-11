@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:47:28
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-10 16:39:42
+ * @LastEditTime: 2024-05-11 14:05:46
  * @FilePath: \blog\pages\[blog]\index.vue
 -->
 <template>
@@ -16,9 +16,9 @@
             'color-#000': key === activeIndex,
             'color-#aaa': key !== activeIndex,
           }">
-          {{ key }}
+          <span>{{ String(key).trim() }}</span>
+          <span class="mr-6 font-size-16px">({{ _.length }})</span>
         </span>
-        <span class="mr-6">({{ _.length }})</span>
       </span>
     </template>
     <div class="mt-10">
