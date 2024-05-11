@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:21:46
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 15:02:29
+ * @LastEditTime: 2024-05-11 16:06:04
  * @FilePath: \blog\nuxt.config.ts
  */
 // https://nuxt.com/docs/api/configuration/nuxt-config

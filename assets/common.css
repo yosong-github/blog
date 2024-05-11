@@ -43,6 +43,7 @@
   background-color: rgb(242, 242, 242) !important;
 } */
 
+/* 加载字体会有闪烁 */
 @font-face {
   font-family: 'blog';
   src: url(./OperatorMonoSSmLigNerdFontAAEOPSLMDI-Book.88ea8017.woff2)

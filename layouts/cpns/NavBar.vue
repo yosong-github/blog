@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:48:24
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 15:26:41
+ * @LastEditTime: 2024-05-11 16:13:28
  * @FilePath: \blog\layouts\cpns\NavBar.vue
 -->
 <template>
@@ -13,7 +13,7 @@
       </NuxtLink>
     </template>
     <i
-      class="i-grommet-icons-actions"
+      class="i-grommet-icons-actions cursor-pointer"
       ref="themeRef"
       @click="changeBtn(changeTheme, $event)"
       id="btn"></i>
@@ -29,13 +29,21 @@ const navList = [
 
 const themeRef = ref<HTMLElement>()
 
+const cookie = useCookie('theme', {
+  maxAge: 1000 * 60 * 24 * 30,
+})
+
 // 主题切换函数
 const changeTheme = () => {
   document.querySelector('html')!.classList.toggle('dark')
-  localStorage.setItem(
-    'theme',
-    document.querySelector('html')!.classList.contains('dark') ? 'dark' : ''
-  )
+
+  cookie.value = document.querySelector('html')!.classList.contains('dark')
+    ? 'dark'
+    : ''
+  // localStorage.setItem(
+  //   'theme',
+  //   document.querySelector('html')!.classList.contains('dark') ? 'dark' : ''
+  // )
 }
 const changeBtn = (func: any, $eve: any) => {
   const x = $eve.clientX
