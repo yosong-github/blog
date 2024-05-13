@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:47:28
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 14:59:40
+ * @LastEditTime: 2024-05-13 11:18:39
  * @FilePath: \blog\pages\[blogType]\index.vue
 -->
 <template>
@@ -13,7 +13,6 @@
           @click="typeCheck(key)"
           class="cursor-pointer font-size-26px font-weight-bold"
           :class="{
-            'color-type-active': key === activeIndex,
             'color-type': key !== activeIndex,
           }">
           <span>{{ String(key).trim() }}</span>

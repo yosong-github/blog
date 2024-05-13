@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:28:00
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 14:58:47
+ * @LastEditTime: 2024-05-13 11:18:15
  * @FilePath: \blog\uno.config.ts
  */
 // uno.config.ts
@@ -21,7 +21,6 @@ export default defineConfig({
   shortcuts: {
     'flex-center': 'flex items-center justify-center',
     'current-nav': 'bg-Accent c-white',
-    'color-type-active': '--bg-color',
     'color-type': 'color-#aaa',
   },
   theme: {
