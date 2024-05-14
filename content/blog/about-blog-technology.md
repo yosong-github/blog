@@ -7,6 +7,8 @@ tags:
 title: 博客技术栈
 ---
 
+<img src='/about/yosong.png' width = 100% />
+
 本站使用了`nuxt + nuxt-content + aos`搭建，跟主流博客系统相比最鲜明的特点就是帮助作者专注于内容创作，而不需要把大把的精力浪费到工具上。同时本网站使用`cloudflare`自动构建与部署。下面将详细讲述搭建此博客的过程。
 
 ## 早期探索
