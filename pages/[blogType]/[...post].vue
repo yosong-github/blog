@@ -2,8 +2,8 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 14:33:17
- * @FilePath: \blog\pages\[blog-type]\[...post].vue
+ * @LastEditTime: 2024-05-14 12:22:39
+ * @FilePath: \blog\pages\[blogType]\[...post].vue
 -->
 <template>
   <div class="pb-10 prose">
@@ -28,40 +28,39 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 
-// import {
-//   type WalineInstance,
-//   type WalineInitOptions,
-//   init,
-// } from '@waline/client'
+import {
+  type WalineInstance,
+  type WalineInitOptions,
+  init,
+} from '@waline/client'
 
-// import '@waline/client/style'
+import '@waline/client/style'
 
 const route = useRoute()
 const post = route.params.blogType + '/' + route.params.post[0]
 
-// const comment = ref<HTMLDivElement>()
-// const waline = ref<WalineInstance | null>()
+const comment = ref<HTMLDivElement>()
+const waline = ref<WalineInstance | null>()
 
-// onMounted(() => {
-//   waline.value = init({
-//     el: comment.value,
-//     serverURL:
-//       'https://blog-waline-rmuf0c143-yosong-githubs-projects.vercel.app/',
-//     path: post,
-//     dark: 'html[data-theme="dark"]',
-//     requiredMeta: ['nick'],
-//     login: 'enable',
-//     wordLimit: 0,
-//     pageSize: 10,
-//     lang: 'zh-CN',
-//     comment: true,
-//     pageview: true,
-//     commentCount: true,
-//     secureDomains: ['https://blog-3dq.pages.dev'],
-//   } as WalineInitOptions)
-// })
+onMounted(() => {
+  waline.value = init({
+    el: comment.value,
+    serverURL: 'https://comment.felixwliu.cn/',
+    path: 'yosong/' + post,
+    dark: 'html[data-theme="dark"]',
+    requiredMeta: ['nick'],
+    login: 'enable',
+    wordLimit: 0,
+    pageSize: 10,
+    lang: 'zh-CN',
+    comment: true,
+    pageview: true,
+    commentCount: true,
+    secureDomains: ['https://blog-3dq.pages.dev'],
+  } as WalineInitOptions)
+})
 
-// onBeforeUnmount(() => {
-//   waline.value?.destroy()
-// })
+onBeforeUnmount(() => {
+  waline.value?.destroy()
+})
 </script>
