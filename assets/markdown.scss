@@ -145,11 +145,10 @@
   blockquote {
     padding: 5px 1em;
     font-style: italic;
+    border-color: var(--color-accent);
     background-color: var(--common-bg);
-    border-color: var(--common-bg);
     border-left-width: 0.4em;
-    border-radius: var(--common-rd);
-
+    border-left: .25em solid var(--color-accent);
     > p {
       margin: 0.5em 0;
     }
