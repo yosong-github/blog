@@ -1,9 +1,8 @@
 ---
 date: '2024-05-15 15:45:20'
 tags:
-  - nuxt
-  - nuxt-content
-  - aos
+  - mitt
+  - EventBus
 title: mitt小巧的、快速的事件总线库
 ---
 
