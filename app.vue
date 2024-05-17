@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:21:46
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-15 16:44:19
+ * @LastEditTime: 2024-05-17 10:44:43
  * @FilePath: \blog\app.vue
 -->
 <template>
@@ -19,10 +19,12 @@ const cookie = useCookie('theme', {
   maxAge: 1000 * 60 * 24 * 30,
 })
 
-useHead({
-  htmlAttrs: {
-    class: cookie.value ? cookie.value : '',
-  },
+useHead(() => {
+  return {
+    htmlAttrs: {
+      class: cookie.value == 'dark' ? 'dark' : 'light',
+    },
+  }
 })
 
 onMounted(() => {

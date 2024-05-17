@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:48:24
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-11 16:13:28
+ * @LastEditTime: 2024-05-17 10:47:08
  * @FilePath: \blog\layouts\cpns\NavBar.vue
 -->
 <template>
@@ -39,11 +39,7 @@ const changeTheme = () => {
 
   cookie.value = document.querySelector('html')!.classList.contains('dark')
     ? 'dark'
-    : ''
-  // localStorage.setItem(
-  //   'theme',
-  //   document.querySelector('html')!.classList.contains('dark') ? 'dark' : ''
-  // )
+    : 'light'
 }
 const changeBtn = (func: any, $eve: any) => {
   const x = $eve.clientX
