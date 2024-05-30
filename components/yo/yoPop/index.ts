@@ -2,11 +2,11 @@
  * @Author: yosong
  * @Date: 2024-05-23 12:01:54
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-23 12:29:54
+ * @LastEditTime: 2024-05-30 11:12:19
  * @FilePath: \blog\components\yo\yoPop\index.ts
  */
 import { createApp, type App, type Component } from 'vue'
-import YoPop from './YoPop.vue'
+import YoPop from './TestYoPop.vue'
 
 let pop: App
 let div: HTMLElement
