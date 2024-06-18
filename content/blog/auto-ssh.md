@@ -23,7 +23,7 @@ ssh 的主要目的是提供安全的远程访问，防止数据在传输过程�
 ### win 生成 ssh 密钥
 
 输入 ssh-keygen，然后按下 Enter 键开始生成密钥。一直按 Enter，直至结束。
-`Enter file in which to save the key (C:\Users\xxx/.ssh/id_rsa):`密钥保存的位子与名称可以自定义
+'Enter file in which to save the key (C:\Users\xxx/.ssh/id_rsa):'密钥保存的位子与名称可以自定义
 
 ```bash
 ssh-keygen
