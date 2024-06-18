@@ -8,6 +8,11 @@ title: 测试文章
 
 <img src='/blog/nuxt.jpg' width='100%'>
 
+<mermaid style="align-self: stretch;">
+flowchart LR
+Me(今天)-->bigBrother(也是)-->End(元气满满的一天)
+</mermaid>
+
 我们知道 Nuxt 是一款出色的工具。
 但它有太多令人惊叹的功能，很难一一记住。
 这就是为什么我为您编制了这份包含 25 条 Nuxt 提示的巨大列表--使用它们来节省时间并编写更好的 Nuxt 应用程序。
