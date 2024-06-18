@@ -2,13 +2,17 @@
  * @Author: yosong
  * @Date: 2024-06-18 14:44:58
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-06-18 15:00:00
+ * @LastEditTime: 2024-06-18 15:07:07
  * @FilePath: \blog\components\content\Mermaid.vue
 -->
 <template>
   <pre
     ref="el"
-    :style="{ display: rendered ? 'block' : 'none' }"
+    :style="{
+      display: rendered ? 'flex' : 'none',
+      justifyContent: 'center',
+      'align-items': 'center',
+    }"
     class="not-prose">
     <slot />
   </pre>
