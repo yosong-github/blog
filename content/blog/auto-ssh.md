@@ -51,6 +51,7 @@ const remoteFolderPath = '/home/test'
 const host = 'x.x.x.x'
 const privateKey = readFileSync('C:\\Users\\xxxx\\.ssh\\xxxx') // ssh私钥地址
 const username = 'root'
+const port = '22'
 
 // 上传完成数量
 let uploadOkNum = 0
@@ -176,8 +177,8 @@ getFilesCount(localFolderPath)
       })
       .connect({
         host,
-        port: port || 22,
-        username: username || 'root',
+        port: port,
+        username: username,
         privateKey,
       })
   })

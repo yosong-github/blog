@@ -10,6 +10,7 @@ const remoteFolderPath = '/home/test'
 const host = 'x.x.x.x'
 const privateKey = readFileSync('C:\\Users\\xxx\\.ssh\\xxx')
 const username = 'root'
+const port = '22'
 
 let uploadOkNum = 0
 let uploadErrorNum = 0
@@ -120,8 +121,8 @@ getFilesCount(localFolderPath)
       })
       .connect({
         host,
-        port: port || 22,
-        username: username || 'root',
+        port: port,
+        username: username,
         privateKey
       })
   })
