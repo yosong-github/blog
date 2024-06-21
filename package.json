@@ -18,11 +18,14 @@
     "dayjs": "^1.11.11",
     "mermaid": "^10.9.1",
     "nuxt": "^3.11.2",
+    "ssh2": "^1.15.0",
+    "unist-util-visit": "^5.0.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
+    "@types/ssh2": "^1.15.0",
     "@unocss/nuxt": "^0.59.4",
     "sass": "^1.77.0",
     "unocss": "^0.60.0"

@@ -5,10 +5,10 @@ import { Client } from 'ssh2'
 
 const conn = new Client()
 
-const localFolderPath = './dist'
-const remoteFolderPath = '/home/test'
-const host = 'x.x.x.x'
-const privateKey = readFileSync('C:\\Users\\xxx\\.ssh\\xxx')
+const localFolderPath = './.output'
+const remoteFolderPath = '/home/yosong/blogNuxt'
+const host = '139.9.32.77'
+const privateKey = readFileSync('C:\\Users\\24045\\.ssh\\huawei')
 const username = 'root'
 const port = '22'
 
@@ -40,7 +40,7 @@ async function getFilesCount(dir) {
 
 // 调用函数并打印结果
 getFilesCount(localFolderPath)
-  .then(count => {
+  .then((count) => {
     console.log(`读取到的文件数量为: ${count}`)
     allFIle = count
     conn
@@ -57,34 +57,37 @@ getFilesCount(localFolderPath)
             stream
               .on('close', (code, signal) => {
                 console.log('文件夹删除完成')
-                sftp.mkdir(remoteFolderPath, true, mkdirErr => {
+                sftp.mkdir(remoteFolderPath, true, (mkdirErr) => {
                   // true 表示如果目录不存在则递归创建
                   if (mkdirErr) {
-                    console.error(`文件夹创建失败: ${mkdirErr}`, remoteFolderPath)
+                    console.error(
+                      `文件夹创建失败: ${mkdirErr}`,
+                      remoteFolderPath
+                    )
                   } else {
                     // 删除完成文件夹并且创建初始化目录后开始
                     uploadDirectory(localFolderPath, remoteFolderPath)
                   }
                 })
               })
-              .on('data', data => {
+              .on('data', (data) => {
                 console.log('STDOUT: ' + data)
               })
-              .stderr.on('data', data => {
+              .stderr.on('data', (data) => {
                 console.log('STDERR: ' + data)
               })
           })
 
           // 递归上传文件夹
           function uploadDirectory(localPath, remotePath) {
-            fs.readdirSync(localPath).forEach(fileName => {
+            fs.readdirSync(localPath).forEach((fileName) => {
               const localFilePath = path.join(localPath, fileName)
               const remoteFilePath = path.join(remotePath, fileName)
 
               if (fs.lstatSync(localFilePath).isDirectory()) {
                 let remoteDirPath = remoteFilePath.replace(/\\/g, '/')
                 // 创建文件夹
-                sftp.mkdir(remoteDirPath, true, mkdirErr => {
+                sftp.mkdir(remoteDirPath, true, (mkdirErr) => {
                   // true 表示如果目录不存在则递归创建
                   if (mkdirErr) {
                     console.error(`文件夹创建失败: ${mkdirErr}`, remoteDirPath)
@@ -95,25 +98,34 @@ getFilesCount(localFolderPath)
 
                 uploadDirectory(localFilePath, remoteFilePath)
               } else {
-                sftp.fastPut(localFilePath, remoteFilePath.replace(/\\/g, '/'), {}, err => {
-                  if (err) {
-                    console.error(`error ${localFilePath} to error ${remoteFilePath}`)
+                sftp.fastPut(
+                  localFilePath,
+                  remoteFilePath.replace(/\\/g, '/'),
+                  {},
+                  (err) => {
+                    if (err) {
+                      console.error(
+                        `error ${localFilePath} to error ${remoteFilePath}`
+                      )
 
-                    uploadErrorNum++
-                  } else {
-                    console.log(`Uploaded ${localFilePath} to ${remoteFilePath}`)
+                      uploadErrorNum++
+                    } else {
+                      console.log(
+                        `Uploaded ${localFilePath} to ${remoteFilePath}`
+                      )
 
-                    uploadOkNum++
+                      uploadOkNum++
 
-                    if (uploadOkNum + uploadErrorNum == allFIle) {
-                      console.log('上传完成')
-                      console.log('上传成功文件数量:', uploadOkNum)
-                      console.log('上传失败文件数量:', uploadErrorNum)
-                      console.log('文件总数:', allFIle)
-                      conn.end()
+                      if (uploadOkNum + uploadErrorNum == allFIle) {
+                        console.log('上传完成')
+                        console.log('上传成功文件数量:', uploadOkNum)
+                        console.log('上传失败文件数量:', uploadErrorNum)
+                        console.log('文件总数:', allFIle)
+                        conn.end()
+                      }
                     }
                   }
-                })
+                )
               }
             })
           }
@@ -123,10 +135,10 @@ getFilesCount(localFolderPath)
         host,
         port: port,
         username: username,
-        privateKey
+        privateKey,
       })
   })
-  .catch(err => {
+  .catch((err) => {
     console.error('An error occurred:', err)
   })
 

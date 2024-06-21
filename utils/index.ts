@@ -2,10 +2,10 @@
  * @Author: yosong
  * @Date: 2024-05-09 14:03:38
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-10 17:25:34
+ * @LastEditTime: 2024-06-21 15:13:37
  * @FilePath: \blog\utils\index.ts
  */
-import type { ParsedContent } from '@nuxt/content/types'
+import type { ParsedContent } from '@nuxt/content'
 
 export function insertYearToPosts(posts: any) {
   let currentYear = -1
@@ -37,8 +37,6 @@ export function getClassifyPosts(posts: ParsedContent[]) {
       list[it._dir].push(it)
     }
   })
-
-  console.log(list)
 
   return list
 }
