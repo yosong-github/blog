@@ -1,0 +1,96 @@
+<!--
+ * @Author: yosong 2404559603@qq.com
+ * @Date: 2024-10-11 16:49:23
+ * @LastEditors: yosong 2404559603@qq.com
+ * @LastEditTime: 2024-10-11 16:50:28
+ * @FilePath: \test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>滚动时取消预览</title>
+  <style>
+    body {
+      height: 1000px;
+    }
+
+    .pic {
+      width: 400px;
+    }
+
+    .mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: all .3s;
+    }
+  </style>
+</head>
+
+<body>
+  <img class="pic" src="./assets/python.png" alt="">
+  <script>
+    // 16，滚动超过100px。就取消预览
+    window.onscroll = (e) => {
+      if (Math.abs(window.pageYOffset - lastPositon) > 100) {
+        document.querySelector(".mask").click();
+      }
+    }
+    // 14，预览图片前页面滚动距离初始值
+    let lastPositon = 0;
+    const pic = document.querySelector(".pic");
+    pic.addEventListener("click", function () {
+      // 15，计算预览图片前页面滚动距离
+      lastPositon = window.pageYOffset;
+      // 1，克隆元素
+      const pic2 = pic.cloneNode();
+      // 2，计算原图距离窗口left，top的距离
+      picToTop = pic.getBoundingClientRect().x;
+      picToLeft = pic.getBoundingClientRect().y;
+      // 11，计算原图宽度
+      picWidth = pic.width;
+      // 3，设置克隆图片初始位置
+      pic2.style.position = "absolute";
+      pic2.style.left = `${picToLeft}px`;
+      pic2.style.top = `${picToTop}px`;
+      // 4，创建蒙层
+      const mask = document.createElement("div")
+      mask.classList.add("mask");
+      // 5，将元素添加到body中
+      mask.appendChild(pic2)
+      document.body.appendChild(mask)
+      // 6，使用setTimeout是为了触发`transition`，产生动画
+      setTimeout(() => {
+        // 7，隐藏原图片
+        pic.style.visibility = "hidden";
+        // 8，设置预览图片展示宽度以及位置
+        pic2.style.position = "absolute";
+        pic2.style.transition = "all .3s";
+        pic2.style.transform = "translateX(-50%)";
+        pic2.style.width = "80%";
+        pic2.style.left = "50%";
+        pic2.style.top = `200px`;
+      }, 0);
+      // 9，点击蒙层关闭预览
+      mask.addEventListener("click", function () {
+        // 10，预览图回到原图位置
+        pic2.style.width = `${picWidth}px`;
+        pic2.style.left = `${picToLeft}px`;
+        pic2.style.top = `${picToTop}px`;
+        pic2.style.transform = "";
+        // 12，显示原图
+        setTimeout(() => {
+          pic.style.visibility = "visible";
+          // 13，删除蒙层以及预览图
+          this.remove()
+        }, 300);
+      })
+    })
+  </script>
+</body>
+
+</html>
