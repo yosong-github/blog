@@ -1,3 +1,12 @@
+/*
+ * @Author: yosong 2404559603@qq.com
+ * @Date: 2024-10-12 11:35:35
+ * @LastEditors: yosong 2404559603@qq.com
+ * @LastEditTime: 2024-10-12 14:56:21
+ * @FilePath: \hooks\useImgPre.ts
+ */
+import cloneImageWithoutReload from "~/utils/cloneImageWithoutReload";
+
 const useImgPre = () => {
   onMounted(() => {
     let imgs = document.querySelectorAll("img");
@@ -9,7 +18,11 @@ const useImgPre = () => {
         // 15，计算预览图片前页面滚动距离
         lastPositon = window.scrollY;
         // 1，克隆元素
+        // 使用这种方式图片不会重新加载，但是会变模糊
+        // const pic2 = cloneImageWithoutReload(pic) as HTMLImageElement;
+        // 使用这种方式浏览器开启缓存图片偶尔会重新加载，导致页面看上去卡顿一下，但是不会降低图片质量
         const pic2 = pic.cloneNode() as HTMLImageElement;
+        console.log(pic2);
 
         // 4，创建蒙层
         const mask = document.createElement("div");
