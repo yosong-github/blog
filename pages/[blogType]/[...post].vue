@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-11 17:32:07
+ * @LastEditTime: 2024-10-12 11:04:05
  * @FilePath: \pages\[blogType]\[...post].vue
 -->
 <template>
@@ -22,47 +22,45 @@
       </template>
     </ContentDoc>
     <div class="content" ref="comment"></div>
+    <!-- <div style="height: 400px; border: 1px solid #ccc; border-radius: 6px">
+      <ClientOnly>
+        <VueFlow :nodes="nodes" :edges="edges">
+          <Background />
+        </VueFlow>
+      </ClientOnly>
+    </div> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-
-// import {
-//   type WalineInstance,
-//   type WalineInitOptions,
-//   init,
-// } from '@waline/client'
-
-// import '@waline/client/style'
+import type { Node, Edge } from "@vue-flow/core";
+import { VueFlow } from "@vue-flow/core";
+import { Background } from "@vue-flow/background";
 
 const route = useRoute();
 const post = route.params.blogType + "/" + route.params.post[0];
 
-const comment = ref<HTMLDivElement>();
-// const waline = ref<WalineInstance | null>()
+const nodes = ref<Node[]>([
+  {
+    id: "1",
+    position: { x: 50, y: 50 },
+    data: { label: "Node 1" },
+  },
+  {
+    id: "2",
+    position: { x: 50, y: 250 },
+    data: { label: "Node 2" },
+  },
+]);
 
-// onMounted(() => {
-//   waline.value = init({
-//     el: comment.value,
-//     serverURL: 'https://comment.felixwliu.cn/',
-//     path: 'yosong/' + post,
-//     dark: 'html.dark',
-//     requiredMeta: ['nick'],
-//     login: 'enable',
-//     wordLimit: 0,
-//     pageSize: 10,
-//     lang: 'zh-CN',
-//     comment: true,
-//     pageview: true,
-//     commentCount: true,
-//     secureDomains: ['https://blog-3dq.pages.dev'],
-//   } as WalineInitOptions)
-// })
-
-// onBeforeUnmount(() => {
-//   waline.value?.destroy()
-// })
+const edges = ref<Edge[]>([
+  {
+    id: "e1->2",
+    source: "1",
+    target: "2",
+  },
+]);
 
 onMounted(() => {
   let imgs = document.querySelectorAll("img");

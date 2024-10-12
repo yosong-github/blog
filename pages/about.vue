@@ -1,9 +1,9 @@
 <!--
  * @Author: yosong
  * @Date: 2024-05-09 11:47:07
- * @LastEditors: Do not edit
- * @LastEditTime: 2024-05-09 13:58:12
- * @FilePath: \blog\pages\about.vue
+ * @LastEditors: yosong 2404559603@qq.com
+ * @LastEditTime: 2024-10-12 10:47:50
+ * @FilePath: \pages\about.vue
 -->
 <template>
   <div class="py-10 prose">
@@ -11,4 +11,6 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+</script>
