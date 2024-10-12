@@ -143,5 +143,25 @@ body {
   bottom: 0;
   z-index: 999999999;
   background-color: rgba(0, 0, 0, 0.7);
-  transition: all 0.5;
+  animation: fadeInIn 0.5s;
+}
+.mask img {
+  margin: 0 auto;
+}
+@keyframes fadeInIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
 }

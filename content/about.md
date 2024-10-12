@@ -32,7 +32,7 @@
 
 ## 近期规划
 
-- 学习 vue3 源码相关知识，加强对 vue 的理解。
+- 加载学习 vue3 相关知识，加强对 vue 的理解。
 - 学习 react 争取熟练使用 react 相关技术，拓宽自己的见识。
 
 ## 爱好
@@ -48,3 +48,5 @@
 - 电话（微信同号）：14781740997
 - github: <a href="https://github.com/yosong-github">https://github.com/yosong-github</a>
 - gitee: <a href="https://gitee.com/yosong">https://gitee.com/yosong</a>
+
+![212](favicon.ico)
