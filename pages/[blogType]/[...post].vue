@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-12 11:04:05
+ * @LastEditTime: 2024-10-12 15:38:49
  * @FilePath: \pages\[blogType]\[...post].vue
 -->
 <template>
@@ -34,33 +34,33 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import type { Node, Edge } from "@vue-flow/core";
-import { VueFlow } from "@vue-flow/core";
-import { Background } from "@vue-flow/background";
+// import type { Node, Edge } from "@vue-flow/core";
+// import { VueFlow } from "@vue-flow/core";
+// import { Background } from "@vue-flow/background";
 
 const route = useRoute();
 const post = route.params.blogType + "/" + route.params.post[0];
 
-const nodes = ref<Node[]>([
-  {
-    id: "1",
-    position: { x: 50, y: 50 },
-    data: { label: "Node 1" },
-  },
-  {
-    id: "2",
-    position: { x: 50, y: 250 },
-    data: { label: "Node 2" },
-  },
-]);
+// const nodes = ref<Node[]>([
+//   {
+//     id: "1",
+//     position: { x: 50, y: 50 },
+//     data: { label: "Node 1" },
+//   },
+//   {
+//     id: "2",
+//     position: { x: 50, y: 250 },
+//     data: { label: "Node 2" },
+//   },
+// ]);
 
-const edges = ref<Edge[]>([
-  {
-    id: "e1->2",
-    source: "1",
-    target: "2",
-  },
-]);
+// const edges = ref<Edge[]>([
+//   {
+//     id: "e1->2",
+//     source: "1",
+//     target: "2",
+//   },
+// ]);
 
 onMounted(() => {
   let imgs = document.querySelectorAll("img");

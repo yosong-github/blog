@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 11:21:46
  * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-12 11:03:43
+ * @LastEditTime: 2024-10-12 15:39:22
  * @FilePath: \nuxt.config.ts
  */
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -15,8 +15,8 @@ export default defineNuxtConfig({
     "./assets/common.css",
     "aos/dist/aos.css",
     "./assets/markdown.scss",
-    "@vue-flow/core/dist/style.css",
-    "@vue-flow/core/dist/theme-default.css",
+    // "@vue-flow/core/dist/style.css",
+    // "@vue-flow/core/dist/theme-default.css",
   ],
 
   experimental: {
