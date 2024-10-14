@@ -2,11 +2,11 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-14 14:35:15
+ * @LastEditTime: 2024-10-14 17:41:46
  * @FilePath: \pages\[blogType]\[...post].vue
 -->
 <template>
-  <div class="pb-10 prose content">
+  <div class="pb-10 md:prose content">
     <ContentDoc :path="post">
       <template #default="{ doc }">
         <doc-render :article="doc" />
