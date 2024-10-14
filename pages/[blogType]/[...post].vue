@@ -37,3 +37,9 @@ useImgPre();
 
 onMounted(() => {});
 </script>
+
+<style>
+.content img {
+  cursor: pointer;
+}
+</style>
