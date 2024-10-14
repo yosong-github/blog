@@ -10,7 +10,6 @@
   --common-bg: #6974a729;
   --common-bd: #c9c7c2;
 }
-
 .current-nav {
   background-color: var(--color-accent);
   color: #fff;

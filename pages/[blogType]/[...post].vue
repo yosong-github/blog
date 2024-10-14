@@ -1,19 +1,12 @@
 <!--
- * @Author: yosong 2404559603@qq.com
- * @Date: 2024-10-12 11:07:22
- * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-12 11:37:11
- * @FilePath: \pages\[blogType]\[...post].vue
--->
-<!--
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-12 11:19:21
+ * @LastEditTime: 2024-10-14 14:35:15
  * @FilePath: \pages\[blogType]\[...post].vue
 -->
 <template>
-  <div class="pb-10 prose">
+  <div class="pb-10 prose content">
     <ContentDoc :path="post">
       <template #default="{ doc }">
         <doc-render :article="doc" />

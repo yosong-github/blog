@@ -1,5 +1,5 @@
 ---
-date: '2024-05-09 21:48:49'
+date: "2024-05-09 21:48:49"
 tags:
   - nuxt
   - 前端
@@ -26,7 +26,7 @@ Me(今天)-->bigBrother(也是)-->End(元气满满的一天)
   当然，还有更多！
   您最喜欢哪个技巧？
 
-## 1 . 懒加载组件
+## 懒加载组件
 
 并非所有组件都需要立即加载。
 使用 Nuxt，我们可以通过添加 Lazy 作为前缀来延迟加载。
@@ -41,7 +41,7 @@ Nuxt 会为我们完成所有繁重的工作！
 <LazyModal v-if="showModal" />
 ```
 
-## 2 . 用 Nitro 预渲染特定路由
+## 用 Nitro 预渲染特定路由
 
 通过直接配置 Nitro，我们可以只对某些路由进行预渲染。
 
@@ -51,28 +51,28 @@ Nuxt 会为我们完成所有繁重的工作！
 export default defineNuxtConfig({
   nitro: {
     prerender: {
-      routes: ['/about', '/blog'],
+      routes: ["/about", "/blog"],
     },
   },
-})
+});
 ```
 
-## 3 . 使用内置键值存储
+## 使用内置键值存储
 
 在 Nuxt 中，我们可以使用简单但功能强大的内置键值存储：
 
 ```js
-const storage = useStorage()
-const key = 'session:token'
+const storage = useStorage();
+const key = "session:token";
 
 // 保存值
-await storage.setItem(key, sessionToken)
+await storage.setItem(key, sessionToken);
 
 // …并在不同接口中调用
-const token = await storage.getItem(key)
+const token = await storage.getItem(key);
 ```
 
-## 4 . 自动导入
+## 自动导入
 
 利用自动导入功能，我们可以快速访问路由和用户信息，而无需手动导入。
 
@@ -81,12 +81,12 @@ const token = await storage.getItem(key)
 ```html
 <script setup>
   // 我们可以使用已导入的路由和用户，而无需自行导入
-  const { path, params } = useRoute()
-  const userData = useCustomComposable()
+  const { path, params } = useRoute();
+  const userData = useCustomComposable();
 </script>
 ```
 
-## 5 . 反应式控制头部脚本
+## 反应式控制头部脚本
 
 Nuxt 3 允许开发人员使用 `useHead` 可组合功能对应用程序的 `<head`> 进行反应式控制。
 
@@ -97,30 +97,30 @@ useHead({
   titleTemplate: (title) => `${title} | My Website`,
   script: [
     {
-      src: 'https://www.scripts.com/some/other/script.js',
+      src: "https://www.scripts.com/some/other/script.js",
       body: true,
     },
   ],
-})
+});
 ```
 
-## 6 . 快速获取路由信息
+## 快速获取路由信息
 
 Nuxt3 中的 `useRoute` 可组合功能可轻松从路由和查询参数中获取信息。
 
 下面是一个示例：
 
 ```js
-const route = useRoute()
+const route = useRoute();
 
-console.log(route.fullPath)
+console.log(route.fullPath);
 // https://www.website.com/?search=hello%20there
 
-console.log(route.query.search)
+console.log(route.query.search);
 // there
 ```
 
-## 7 . 轻松处理客户端错误
+## 轻松处理客户端错误
 
 使用 `NuxtErrorBoundary` 组件围绕应用程序中不同的功能块，可让您一起处理一组错误，从而提供更好的用户体验。
 
@@ -145,7 +145,7 @@ console.log(route.query.search)
 </NuxtErrorBoundary>
 ```
 
-## 8 . 嵌套路由（又称子路由）
+## 嵌套路由（又称子路由）
 
 Nuxt 使用 `NuxtPage` 组件来呈现应用程序 `pages/` 目录中的页面。
 
@@ -169,7 +169,7 @@ one/
 - - three/
 ```
 
-## 9 . `/assets` 与 `/public` - 如何决定？
+## `/assets` 与 `/public` - 如何决定？
 
 Nuxt 3 为管理网络程序中的资产提供了两种选择：
 
@@ -182,7 +182,7 @@ Nuxt 3 为管理网络程序中的资产提供了两种选择：
 ```html
 // 使用 ~/assets
 <script setup>
-  import image from '~/assets/image.png'
+  import image from "~/assets/image.png";
 </script>
 <template>
   <img :src="image" />
@@ -194,7 +194,7 @@ Nuxt 3 为管理网络程序中的资产提供了两种选择：
 </template>
 ```
 
-## 10 . 使用 `/assets` 目录
+## 使用 `/assets` 目录
 
 Nuxt 3 中的 `~/assets` 文件夹适用于需要处理的资产。
 
@@ -203,8 +203,8 @@ Nuxt 3 中的 `~/assets` 文件夹适用于需要处理的资产。
 从该文件夹导入资产时，捆绑程序会处理文件，生成带有哈希值的新文件名，并用新文件名替换导入文件。
 
 ```js
-import image from '~/assets/image.png'
-import style from '~/assets/style.css'
+import image from "~/assets/image.png";
+import style from "~/assets/style.css";
 ```
 
 `~/assets` 文件夹还有一个好处，就是可以在构建过程中捕捉丢失的资产。如果资产丢失，就会出现构建错误，这有助于维护应用程序的完整性。而 `~/public` 文件夹中的资产不会出现这种情况，因为它们不会被处理。
@@ -219,7 +219,7 @@ import missingImage from '~/assets/missing-image.png';
 // 不会构建错误
 ```
 
-## 11 . 使用 `/public` 目录
+## 使用 `/public` 目录
 
 `~/public`文件夹适用于无需处理的资产，应直接从应用程序根目录提供。
 该文件夹中的文件不会被修改，会直接复制到构建输出中。
@@ -231,7 +231,7 @@ yourwebsite.com/favicon.ico
 yourwebsite.com/sitemap.xml
 ```
 
-## 12 . 定制自己的 NuxtLink
+## 定制自己的 NuxtLink
 
 如果需要，你还可以使用 `defineNuxtLink` 将这些不同的配置封装到自己的链接组件中：
 
@@ -240,10 +240,10 @@ yourwebsite.com/sitemap.xml
 
 // 在开发过程中只对预置链接着色
 export default defineNuxtLink({
-  componentName: 'MyLink',
+  componentName: "MyLink",
   prefetchedClass:
-    process.env.NODE_ENV === 'development' ? 'prefetched' : undefined,
-})
+    process.env.NODE_ENV === "development" ? "prefetched" : undefined,
+});
 ```
 
 在这里，我们创建了自己的 MyLink 组件，它将在预取链接上设置一个特殊的类，但仅限于开发期间。
@@ -263,7 +263,7 @@ defineNuxtLink({
 
 如果您想了解更多信息，我建议您直接查看[文档](https://nuxt.com/docs/api/components/nuxt-link)或[源代码](https://github.com/nuxt/nuxt/blob/main/packages/nuxt/src/app/components/nuxt-link.ts)本身。
 
-## 13 . 使用 NuxtLink 预取页面
+## 使用 NuxtLink 预取页面
 
 对于内部链接，`NuxtLink` 可以检查它是否按顺序出现在视口中，这样它就能在你需要之前预加载数据：
 
@@ -291,7 +291,7 @@ defineNuxtLink({
 
 这在调试过程中可能非常有用，但对最终用户可能就没那么有用了！
 
-## 14 . 使用 NuxtLink 的外部链接
+## 使用 NuxtLink 的外部链接
 
 你知道 `NuxtLink` 也能处理外部链接吗？
 
@@ -313,7 +313,7 @@ defineNuxtLink({
 <NuxtLink to="www.masteringnuxt.com">Mastering Nuxt 3</NuxtLink>
 ```
 
-## 15 . 数据取回和关键参数
+## 数据取回和关键参数
 
 `key` 参数是可以提供给 `useAsyncData` 和 `useFetch` 组件的可选参数。
 
@@ -342,20 +342,20 @@ defineNuxtLink({
 ```
 
 ```js
-const selectedProject = ref(1)
+const selectedProject = ref(1);
 const projects = [
-  { id: 1, name: 'Project A' },
-  { id: 2, name: 'Project B' },
-  { id: 3, name: 'Project C' },
-]
+  { id: 1, name: "Project A" },
+  { id: 2, name: "Project B" },
+  { id: 3, name: "Project C" },
+];
 
 const {
   data: tracks,
   pending,
   error,
-} = useAsyncData('tracks', () =>
+} = useAsyncData("tracks", () =>
   fetch(`https://api.example.com/projects/${selectedProject.value}/tracks`)
-)
+);
 ```
 
 这里的 `key` 是 `tracks `。
@@ -363,26 +363,26 @@ const {
 当数据在服务器上获取并与客户端捆绑包一起传递时，客户端知道它不需要重新获取这些数据，因为它们已经被获取过了。
 如果不提供 `key`，Nuxt 会根据使用密钥的行和文件自动为你创建一个 `key`。
 
-## 16 . 使用 Supabase + Nuxt 轻松进行身份验证
+## 使用 Supabase + Nuxt 轻松进行身份验证
 
 要使用 Github 作为 OAuth 提供者登录用户，我们可以使用 Supabase auth 客户端：
 
 ```js
-const supabase = useSupabaseAuthClient()
+const supabase = useSupabaseAuthClient();
 
 const login = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
-    provider: 'github',
-  })
+    provider: "github",
+  });
 
-  if (error) console.error(error)
+  if (error) console.error(error);
   // 处理错误，例如向用户显示通知
-}
+};
 ```
 
 真的没别的了！
 
-## 17 . useAsyncData 可组合器
+## useAsyncData 可组合器
 
 `useAsyncData` composable 是 Nuxt 提供的一种功能强大的 composable，它允许你在组件中异步获取数据。
 
@@ -410,9 +410,9 @@ const {
   data: instruments,
   pending,
   error,
-} = useAsyncData('instruments', () =>
-  fetch('https://api.example.com/instruments')
-)
+} = useAsyncData("instruments", () =>
+  fetch("https://api.example.com/instruments")
+);
 ```
 
 在示例中，我们使用 `useAsyncData` 获取工具列表，并将结果赋值给响应式工具变量。
@@ -421,7 +421,7 @@ const {
 
 您可以查看[文档](https://nuxt.com/docs/api/composables/use-async-data)了解更多信息。
 
-## 18 . 可组合的 useFetch
+## 可组合的 useFetch
 
 这是 Nuxt 提供的另一种可组合器，可简化组件中的数据获取。
 
@@ -443,12 +443,12 @@ const {
 ```
 
 ```js
-const projectId = 1
+const projectId = 1;
 const {
   data: tracks,
   pending,
   error,
-} = useFetch(`https://api.example.com/projects/${projectId}/tracks`)
+} = useFetch(`https://api.example.com/projects/${projectId}/tracks`);
 ```
 
 在上面的示例中，我们会检查 `pending` 是否为 true，如果为 true 则显示加载信息。此外，我们还会检查是否有错误，如果有，则显示错误信息。
@@ -456,19 +456,21 @@ const {
 为确保在项目 ID 变更时更新组件，您可以将 `projectId` 作为 `ref` 传入：
 
 ```js
-const projectId = ref(1)
+const projectId = ref(1);
 const {
   data: tracks,
   pending,
   error,
-} = useFetch(() => `https://api.example.com/projects/${projectId.value}/tracks`)
+} = useFetch(
+  () => `https://api.example.com/projects/${projectId.value}/tracks`
+);
 ```
 
 这样，如果 projectId 值发生变化，URL 就会相应更新，并重新获取数据。
 
 如果需要，您可以查看[文档](https://nuxt.com/docs/api/composables/use-fetch)了解更多信息。
 
-## 19 . 使用 VSharp 压缩图像
+## 使用 VSharp 压缩图像
 
 有几种不同的 Vite 插件可用于压缩图片，但在本提示中我们将使用 [vsharp](https://github.com/jw-12138/vite-plugin-vsharp)。
 
@@ -477,7 +479,7 @@ const {
 然后，我们更新配置，使其看起来像这样：
 
 ```js
-import vsharp from 'vite-plugin-vsharp'
+import vsharp from "vite-plugin-vsharp";
 
 export default defineNuxtConfig({
   // 👇 添加 vsharp 到 vite 插件
@@ -492,7 +494,7 @@ export default defineNuxtConfig({
   modules: [
     // …
   ],
-})
+});
 ```
 
 就是这样！
@@ -501,7 +503,7 @@ export default defineNuxtConfig({
 
 对于一个小小的配置更改来说，这已经是很大的成功了！
 
-## 20 . 为获取添加基本缓存
+## 为获取添加基本缓存
 
 下面是我们的可组合 `useFetchWithCache` ，比如这样：
 
@@ -548,7 +550,7 @@ const settings = useFetchWithCache<Settings>('/api/settings')
 
 阅读[完整的教程](https://masteringnuxt.com/blog/writing-a-cache-composable-in-nuxt-3)，详细了解这一切是如何工作的。
 
-## 21 . 了解通用渲染的优势
+## 了解通用渲染的优势
 
 针对 SPA 和 SSR 的局限性，Nuxt 结合了它们的优势，提供了一种独特的解决方案。这种方法被称为通用渲染（Universal Rendering），它提供了两种方法的最佳优势。
 
@@ -572,7 +574,7 @@ const settings = useFetchWithCache<Settings>('/api/settings')
 
 这些优化和许多其他优化都有助于提高 Nuxt 应用程序的整体速度和效率。从本质上讲，Nuxt 在不牺牲性能的情况下提供了无缝的用户体验，为开发人员提供了 SPA 和 SSR 两个世界的最佳体验。
 
-## 22 . 在新标签页中打开 NuxtLinks
+## 在新标签页中打开 NuxtLinks
 
 如果希望链接在新标签页（或窗口，取决于用户浏览器的工作方式）中打开，可以使用 `target` 属性：
 
@@ -580,7 +582,7 @@ const settings = useFetchWithCache<Settings>('/api/settings')
 <NuxtLink to="/articles" target="_blank"> Mastering Nuxt 3 </NuxtLink>
 ```
 
-## 23 . 使用哪种配置？ runtimeConfig vs. appConfig
+## 使用哪种配置？ runtimeConfig vs. appConfig
 
 为了更好地了解 `runtimeConfig` 和 `app.config` 之间的异同，让我们来看看这张功能对照表（摘自 [Nuxt 文档](https://nuxt.com/docs/getting-started/configuration#runtimeconfig-vs-appconfig)）：
 
@@ -606,7 +608,7 @@ const settings = useFetchWithCache<Settings>('/api/settings')
 - **runtimeConfig**： 对于需要在构建后使用环境变量指定的私有或公共标记，使用 runtimeConfig。这对于敏感信息或可能在不同环境中发生变化的值来说非常理想。
 - **app.config**： 将 app.config 用于在构建时确定的公共标记，如网站配置（主题变体、标题）或任何不敏感的项目配置。由于 app.config 支持 HMR，因此对于在开发过程中无需重新加载整个页面即可更新的值，它尤其有用。
 
-## 24 . 使用 runtimeConfig
+## 使用 runtimeConfig
 
 `runtimeConfig` 用于在应用程序中公开环境变量和私有令牌，例如 API 密钥或其他敏感信息。这些值可在 `nuxt.config.ts` 文件中设置，也可使用环境变量覆盖。
 
@@ -616,21 +618,21 @@ const settings = useFetchWithCache<Settings>('/api/settings')
 export default defineNuxtConfig({
   runtimeConfig: {
     // 仅在服务器端可用的私钥
-    shoeStoreApiSecret: 'my-secret-key',
+    shoeStoreApiSecret: "my-secret-key",
     // 公共密钥也在客户端公开
     public: {
-      shoeStoreApiBase: '/shoe-api',
+      shoeStoreApiBase: "/shoe-api",
     },
   },
-})
+});
 ```
 
 要在应用程序中访问 `runtimeConfig` 值，可以使用 `useRuntimeConfig` 可组合功能：
 
 ```html
 <script setup lang="ts">
-  const { shoeStoreApiBase } = useRuntimeConfig()
-  console.log(shoeStoreApiBase) // /shoe-api
+  const { shoeStoreApiBase } = useRuntimeConfig();
+  console.log(shoeStoreApiBase); // /shoe-api
 </script>
 ```
 
@@ -638,8 +640,8 @@ export default defineNuxtConfig({
 
 ```html
 <script setup lang="ts">
-  const { shoeStoreApiSecret } = useRuntimeConfig()
-  console.log(shoeStoreApiSecret) // undefined
+  const { shoeStoreApiSecret } = useRuntimeConfig();
+  console.log(shoeStoreApiSecret); // undefined
 </script>
 ```
 
@@ -647,9 +649,9 @@ export default defineNuxtConfig({
 
 ```js
 export default defineEventHandler(async (event) => {
-  const { shoreStoreApiSecret } = useRuntimeConfig()
-  console.log(shoeStoreApiSecret) // my-secret-key
-})
+  const { shoreStoreApiSecret } = useRuntimeConfig();
+  console.log(shoeStoreApiSecret); // my-secret-key
+});
 ```
 
 您可以在 **.env** 文件中设置环境变量，以便在开发和构建/生成过程中访问它们。只需确保使用正确的前缀。
@@ -661,7 +663,7 @@ NUXT_PUBLIC_SHOE_STORE_API_BASE_URL = "https://api.shoestore.com"
 NUXT_SHOE_STORE_API_SECRET = "my-secret-key"
 ```
 
-## 25 . 使用 appConfig
+## 使用 appConfig
 
 `app.config` 用于公开可在构建时确定的公共变量，如主题变体、标题或其他非敏感项目配置。这些值在 `app.config.ts` 文件中设置。
 
@@ -672,16 +674,16 @@ NUXT_SHOE_STORE_API_SECRET = "my-secret-key"
 
 export default defineAppConfig({
   theme: {
-    primaryColor: '#ababab',
+    primaryColor: "#ababab",
   },
-})
+});
 ```
 
 要访问应用程序中的 `app. config` 的值，您可以使用可组合 `useAppConfig` ：
 
 ```html
 <script setup lang="ts">
-  const appConfig = useAppConfig()
+  const appConfig = useAppConfig();
 </script>
 ```
 
