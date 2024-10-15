@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 16:12:55
  * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-14 17:49:35
+ * @LastEditTime: 2024-10-15 12:23:39
  * @FilePath: \components\doc\DocToc.vue
 -->
 <script setup lang="ts">
@@ -61,7 +61,7 @@ onMounted(() => {
   <div
     class="fixed top-32 lg:left-80% xl:left-75% w-260px hidden lg:block overflow-x-hidden max-h-60% border-s lg:max-w-19.5% xl:max-w-24.5%"
   >
-    <ul>
+    <ul style="padding: 0 1rem; margin: 0; font-size: 0.9rem">
       <li
         v-for="(h2, h2Index) in props.toc.links"
         :key="h2Index"
