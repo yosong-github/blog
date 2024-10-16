@@ -1,5 +1,0 @@
-// ROLLUP_NO_REPLACE 
- const myLifeIsLikeABoxOfChocolates = "{\"parsed\":{\"_path\":\"/life/my-life-is-like-a-box-of-chocolates\",\"_dir\":\"life\",\"_draft\":false,\"_partial\":false,\"_locale\":\"\",\"title\":\"生活就像一盒巧克力\",\"description\":\"Life is like a box of chocolates, you never know what you're gonna get.\",\"date\":\"2024-05-10 14:56:12\",\"tags\":[\"随笔\"],\"body\":{\"type\":\"root\",\"children\":[{\"type\":\"element\",\"tag\":\"p\",\"props\":{},\"children\":[{\"type\":\"text\",\"value\":\"Life is like a box of chocolates, you never know what you're gonna get.\"}]}],\"toc\":{\"title\":\"\",\"searchDepth\":2,\"depth\":2,\"links\":[]}},\"_type\":\"markdown\",\"_id\":\"content:life:my-life-is-like-a-box-of-chocolates.md\",\"_source\":\"content\",\"_file\":\"life/my-life-is-like-a-box-of-chocolates.md\",\"_stem\":\"life/my-life-is-like-a-box-of-chocolates\",\"_extension\":\"md\"},\"hash\":\"EPLIpLBVFl\"}";
-
-export { myLifeIsLikeABoxOfChocolates as default };
-//# sourceMappingURL=my-life-is-like-a-box-of-chocolates.mjs.map
