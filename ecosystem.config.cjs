@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   apps: [
     {
       name: 'yosong_blog', // 应用程序名称
