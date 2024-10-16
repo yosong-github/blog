@@ -1,0 +1,5 @@
+// ROLLUP_NO_REPLACE 
+ const contentNavigation = "[{\"title\":\"关于作者\",\"_path\":\"/about\"},{\"title\":\"Blog\",\"_path\":\"/blog\",\"children\":[{\"title\":\"博客技术栈\",\"_path\":\"/blog/about-blog-technology\"},{\"title\":\"使用 node+ssh2 实现自动化部署\",\"_path\":\"/blog/auto-ssh\"},{\"title\":\"记录Vue3+JSX使用\",\"_path\":\"/blog/define-component-jsx\"},{\"title\":\"封装函数式弹窗组件\",\"_path\":\"/blog/functional-pop-ups\"},{\"title\":\"鸿蒙开发之arkts\",\"_path\":\"/blog/hm-arkts\"},{\"title\":\"优雅 太优雅\",\"_path\":\"/blog/js-interesting-code\"},{\"title\":\"测试文章\",\"_path\":\"/blog/test-blog\"},{\"title\":\"mitt小巧的、快速的事件总线库\",\"_path\":\"/blog/vue3-eventbus-mitt\"}]},{\"title\":\"Life\",\"_path\":\"/life\",\"children\":[{\"title\":\"clear day\",\"_path\":\"/life/clear-day\"},{\"title\":\"状态\",\"_path\":\"/life/list\"},{\"title\":\"生活就像一盒巧克力\",\"_path\":\"/life/my-life-is-like-a-box-of-chocolates\"},{\"title\":\"随记\",\"_path\":\"/life/null\"}]},{\"title\":\"Hello\",\"_path\":\"/me\"}]";
+
+export { contentNavigation as default };
+//# sourceMappingURL=content-navigation.mjs.map
