@@ -2,7 +2,7 @@
  * @Author: yosong
  * @Date: 2024-05-09 15:06:43
  * @LastEditors: yosong 2404559603@qq.com
- * @LastEditTime: 2024-10-14 18:04:35
+ * @LastEditTime: 2024-10-17 14:17:56
  * @FilePath: \pages\[blogType]\[...post].vue
 -->
 <template>
@@ -33,7 +33,7 @@ const route = useRoute();
 const post = route.params.blogType + "/" + route.params.post[0];
 const comment = ref<HTMLDivElement>();
 
-useImgPre();
+useImgPre();  
 
 onMounted(() => {});
 </script>
