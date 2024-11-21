@@ -22,7 +22,6 @@ const useImgPre = () => {
         // const pic2 = cloneImageWithoutReload(pic) as HTMLImageElement;
         // 使用这种方式浏览器开启缓存图片偶尔会重新加载，导致页面看上去卡顿一下，但是不会降低图片质量
         const pic2 = pic.cloneNode() as HTMLImageElement;
-        console.log(pic2);
 
         // 4，创建蒙层
         const mask = document.createElement("div");
@@ -37,7 +36,6 @@ const useImgPre = () => {
         // 11，计算原图宽度
         let picWidth = pic.width;
         let picHeight = pic.height;
-        let aspectRatio = picWidth / picHeight;
 
         // 3，设置克隆图片初始位置
         pic2.style.position = "absolute";
@@ -54,25 +52,41 @@ const useImgPre = () => {
             // 8，设置预览图片展示宽度以及位置
             pic2.style.position = "absolute";
             pic2.style.transition = "all .5s";
-            if (
-              picHeight > picWidth &&
-              window.innerHeight * aspectRatio < window.innerWidth
-            ) {
-              pic2.style.height = "100%";
-              console.log(window.innerHeight * aspectRatio);
-              console.log(window.innerWidth);
+            // picWidth / picHeight;
+            // picHeight / picWidth
 
-              pic2.style.width = window.innerHeight * aspectRatio + "px";
-              pic2.style.transform = "translateX(-50%)";
-              pic2.style.left = "50%";
-              pic2.style.top = `0`;
+            let winHeight = innerHeight;
+            let winWidth = document.querySelector("body")!.clientWidth;
+
+            if (picHeight < picWidth) {
+              if (winHeight > winWidth * (picHeight / picWidth)) {
+                pic2.style.width = winWidth + "px";
+                pic2.style.height = winWidth * (picHeight / picWidth) + "px";
+                pic2.style.transform = "translateY(-50%)";
+                pic2.style.top = "50%";
+                pic2.style.left = `0`;
+              } else {
+                pic2.style.height = winHeight + "px";
+                pic2.style.width = winHeight * (picWidth / picHeight) + "px";
+                pic2.style.transform = "translateX(-50%)";
+                pic2.style.left = "50%";
+                pic2.style.top = `0`;
+              }
             } else {
-              pic2.style.width = "100%";
-              pic2.style.height =
-                window.innerWidth * (picHeight / picWidth) + "px";
-              pic2.style.transform = "translateY(-50%)";
-              pic2.style.top = "50%";
-              pic2.style.left = `0`;
+              // console.log(innerWidth, "innerWidth");
+              if (winWidth > winHeight * (picWidth / picHeight)) {
+                pic2.style.height = winHeight + "px";
+                pic2.style.width = winHeight * (picWidth / picHeight) + "px";
+                pic2.style.transform = "translateX(-50%)";
+                pic2.style.left = "50%";
+                pic2.style.top = `0`;
+              } else {
+                pic2.style.width = winWidth + "px";
+                pic2.style.height = winWidth * (picHeight / picWidth) + "px";
+                pic2.style.transform = "translateY(-50%)";
+                pic2.style.left = "0";
+                pic2.style.top = `50%`;
+              }
             }
           }, 0);
         });
