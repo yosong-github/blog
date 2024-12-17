@@ -225,4 +225,28 @@
       content: "]";
     }
   }
+
+  /* input */
+  input[type="checkbox"]:disabled:checked {
+    background-position: 0 -48px;
+    background-color: var(--color-accent);
+    border: 0;
+  }
+
+  /*复选框基本（未选中）的样式*/
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    background-size: 100% auto;
+    box-sizing: border-box;
+    background-position: 0 0;
+    background-color: white;
+    border: solid 1px #aaa;
+  }
 }
