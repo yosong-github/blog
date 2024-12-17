@@ -7,10 +7,12 @@
 -->
 <template>
   <div class="flex-center border-t border-gray-300 p-4 pt-10 font-size-12px">
-    <a href="https://github.com/yosong-github" target="_blank">
-      <span class="mx-2">YOSONG</span>
+    <a
+      href="https://github.com/yosong-github"
+      class="i-bxl-github w-25px h-25px"
+      target="_blank"
+    >
     </a>
-    <i class="i-bxl-github w-20px h-20px" ref="themeRef" id="btn"></i>
   </div>
 </template>
 

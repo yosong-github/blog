@@ -14,7 +14,8 @@
           class="cursor-pointer font-size-26px font-weight-bold"
           :class="{
             'color-type': key !== activeIndex,
-          }">
+          }"
+        >
           <span>{{ String(key).trim() }}</span>
           <span class="mr-6 font-size-16px">({{ _.length }})</span>
         </span>
@@ -24,10 +25,11 @@
       <template v-for="it in posts[activeIndex]">
         <NuxtLink
           :to="'/' + it._file!.slice(0, -3)"
-          class="flex justify-between items-start my-2 py-2 cursor-pointer">
+          class="flex justify-between items-start my-2 py-2 cursor-pointer light:hover:bg-light dark:hover:bg-dark p-4 rounded"
+        >
           <span class="flex-1">{{ it.title }}</span>
           <span class="w-100px font-size-12px ml-5 color-#aaa">{{
-            Dayjs(it.date).format('YYYY-MM-DD')
+            Dayjs(it.date).format("YYYY-MM-DD")
           }}</span>
         </NuxtLink>
       </template>
@@ -36,41 +38,41 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import Dayjs from 'dayjs'
-import { getPosts } from '../../utils'
-import type { ParsedContent } from '@nuxt/content'
+import { ref } from "vue";
+import Dayjs from "dayjs";
+import { getPosts } from "../../utils";
+import type { ParsedContent } from "@nuxt/content";
 
 // 当前激活的分类
-const activeIndex = ref<string | number>('')
+const activeIndex = ref<string | number>("");
 
 // 所有文章
 const posts = ref<{
-  [key: string]: ParsedContent[]
-}>({})
+  [key: string]: ParsedContent[];
+}>({});
 
 const typeCheck = (key: string | number) => {
-  activeIndex.value = key
-  sessionStorage.setItem('activeIndex', String(key))
-}
+  activeIndex.value = key;
+  sessionStorage.setItem("activeIndex", String(key));
+};
 
 onMounted(() => {
   // 获取所有文章
-  getPosts('/').then((res) => {
-    posts.value = res
-    if (sessionStorage.getItem('activeIndex') === null) {
-      activeIndex.value = Object.keys(res)[0]
+  getPosts("/").then((res) => {
+    posts.value = res;
+    if (sessionStorage.getItem("activeIndex") === null) {
+      activeIndex.value = Object.keys(res)[0];
     } else {
-      activeIndex.value = sessionStorage.getItem('activeIndex')!
+      activeIndex.value = sessionStorage.getItem("activeIndex")!;
     }
-  })
-})
+  });
+});
 
 useHead({
-  title: 'yosong - blog',
+  title: "yosong - blog",
   meta: [
-    { name: 'description', content: 'yosong blog list' },
-    { name: 'keywords', content: 'yosong blog' },
+    { name: "description", content: "yosong blog list" },
+    { name: "keywords", content: "yosong blog" },
   ],
-})
+});
 </script>
