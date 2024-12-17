@@ -9,7 +9,6 @@ title: 优雅 太优雅
 > 水群看见的代码，记录一下
 
 ```js
-// 如果没见过这个我肯定这样写了
 // const formData = new FormData();
 // formData.append("file", file);
 // formData.append("name", name);

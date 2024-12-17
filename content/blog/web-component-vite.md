@@ -18,7 +18,7 @@ title: 基于 Web Components + vite 实现轻量化架子，适用于物联网�
 
 技术最终使用了：Web Components + gulp + vscode 的 Live Server。这些东西已经实现了分模块与热更新。但是项目整体依旧给人一种原始项目的感觉。经过了这一套项目的沉淀，我觉得 pass 这种方式。
 
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/7e44f19addbb485ca5dd99413deec82f~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgeW9zb25n:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzE4MDI1MTExOTYyMjE1NyJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1732765543&x-orig-sign=ilPVhsazEDqvV8nspJ58LtT3zKw%3D)
+![image.png](/blog/webComp1.webp)
 
 ## 船新版本
 
@@ -38,7 +38,7 @@ title: 基于 Web Components + vite 实现轻量化架子，适用于物联网�
 
 [项目地址：https://github.com/yosong-github/yo-web-components-template](https://github.com/yosong-github/yo-web-components-template)
 
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/b59f2264b8a84330b30e1664f93553ec~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgeW9zb25n:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzE4MDI1MTExOTYyMjE1NyJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1732765543&x-orig-sign=DecuNDz6XOlb1I4fCDhbaSiFMPk%3D)
+![image.png](/blog/webComp2.webp)
 
 ### 项目初始化
 
