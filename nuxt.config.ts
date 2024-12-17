@@ -39,6 +39,9 @@ export default defineNuxtConfig({
       },
       langs: ["bash", "js", "ts", "vue", "html", "python", "mermaid", "jsx"],
     },
+    markdown: {
+      rehypePlugins: [],
+    },
   },
 
   devServer: {
