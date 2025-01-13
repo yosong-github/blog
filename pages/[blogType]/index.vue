@@ -91,15 +91,16 @@ const typeCheck = (key: string | number) => {
 
 onMounted(() => {
   // 获取所有文章
-  getPosts("/").then((res) => {
-    posts.value = res;
-    if (sessionStorage.getItem("activeIndex") === null) {
-      activeIndex.value = Object.keys(res)[0];
-    } else {
-      activeIndex.value = sessionStorage.getItem("activeIndex")!;
-    }
-  });
-  // .finally(() => (loading.value = false));
+  getPosts("/")
+    .then((res) => {
+      posts.value = res;
+      if (sessionStorage.getItem("activeIndex") === null) {
+        activeIndex.value = Object.keys(res)[0];
+      } else {
+        activeIndex.value = sessionStorage.getItem("activeIndex")!;
+      }
+    })
+    .finally(() => (loading.value = false));
 });
 
 useHead({
