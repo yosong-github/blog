@@ -11,7 +11,7 @@
       <template #default="{ doc }">
         <doc-render :article="doc" />
 
-        <doc-toc :toc="doc.body.toc" />
+        <doc-toc :toc="doc.body!.toc" />
       </template>
 
       <template #not-found>
@@ -33,7 +33,7 @@ const route = useRoute();
 const post = route.params.blogType + "/" + route.params.post[0];
 const comment = ref<HTMLDivElement>();
 
-useImgPre();  
+useImgPre();
 
 onMounted(() => {});
 </script>

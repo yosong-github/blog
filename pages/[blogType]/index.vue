@@ -6,7 +6,7 @@
  * @FilePath: \blog\pages\[blogType]\index.vue
 -->
 <template>
-  <div class="py-10">
+  <div class="py-10" v-if="!loading">
     <template v-for="(_, key, index) in posts">
       <span>
         <span
@@ -35,6 +35,27 @@
       </template>
     </div>
   </div>
+  <div py-10 v-else>
+    <div light:bg-light dark:bg-dark h-10 w-30></div>
+    <div mt-10>
+      <div
+        class="flex justify-between items-start my-2 py-2 cursor-pointer light:bg-light dark:bg-dark p-4 rounded h-20"
+      >
+        <span flex-1 light:bg-light-1 dark:bg-dark-1 h-100%></span>
+        <span
+          class="w-100px font-size-12px ml-5 color-#aaa light:bg-light-1 dark:bg-dark-1 h-100%>"
+        ></span>
+      </div>
+      <div
+        class="flex justify-between items-start my-2 py-2 cursor-pointer light:bg-light dark:bg-dark p-4 rounded h-20"
+      >
+        <span flex-1 light:bg-light-1 dark:bg-dark-1 h-100%></span>
+        <span
+          class="w-100px font-size-12px ml-5 color-#aaa light:bg-light-1 dark:bg-dark-1 h-100%>"
+        ></span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -42,6 +63,8 @@ import { ref } from "vue";
 import Dayjs from "dayjs";
 import { getPosts } from "../../utils";
 import type { ParsedContent } from "@nuxt/content";
+
+const loading = ref(true);
 
 // 当前激活的分类
 const activeIndex = ref<string | number>("");
@@ -58,14 +81,16 @@ const typeCheck = (key: string | number) => {
 
 onMounted(() => {
   // 获取所有文章
-  getPosts("/").then((res) => {
-    posts.value = res;
-    if (sessionStorage.getItem("activeIndex") === null) {
-      activeIndex.value = Object.keys(res)[0];
-    } else {
-      activeIndex.value = sessionStorage.getItem("activeIndex")!;
-    }
-  });
+  getPosts("/")
+    .then((res) => {
+      posts.value = res;
+      if (sessionStorage.getItem("activeIndex") === null) {
+        activeIndex.value = Object.keys(res)[0];
+      } else {
+        activeIndex.value = sessionStorage.getItem("activeIndex")!;
+      }
+    })
+    .finally(() => (loading.value = false));
 });
 
 useHead({
