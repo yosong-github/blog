@@ -36,12 +36,17 @@
     </div>
   </div>
   <div py-10 v-else>
-    <div light:bg-light dark:bg-dark h-10 w-30></div>
+    <div light:bg-light dark:bg-dark h-10 w-30 class="skeleton"></div>
     <div mt-10>
       <div
         class="flex justify-between items-start my-2 py-2 cursor-pointer light:bg-light dark:bg-dark p-4 rounded h-20"
       >
-        <span flex-1 light:bg-light-1 dark:bg-dark-1 class="h-100%"></span>
+        <span
+          flex-1
+          light:bg-light-1
+          dark:bg-dark-1
+          class="h-100% skeleton"
+        ></span>
         <span
           class="w-100px font-size-12px ml-5 color-#aaa light:bg-light-1 dark:bg-dark-1 h-100%>"
         ></span>
@@ -49,7 +54,12 @@
       <div
         class="flex justify-between items-start my-2 py-2 cursor-pointer light:bg-light dark:bg-dark p-4 rounded h-20"
       >
-        <span flex-1 light:bg-light-1 dark:bg-dark-1 class="h-100%"></span>
+        <span
+          flex-1
+          light:bg-light-1
+          dark:bg-dark-1
+          class="h-100% skeleton"
+        ></span>
         <span
           class="w-100px font-size-12px ml-5 color-#aaa light:bg-light-1 dark:bg-dark-1 h-100%>"
         ></span>
@@ -81,16 +91,15 @@ const typeCheck = (key: string | number) => {
 
 onMounted(() => {
   // 获取所有文章
-  getPosts("/")
-    .then((res) => {
-      posts.value = res;
-      if (sessionStorage.getItem("activeIndex") === null) {
-        activeIndex.value = Object.keys(res)[0];
-      } else {
-        activeIndex.value = sessionStorage.getItem("activeIndex")!;
-      }
-    })
-    .finally(() => (loading.value = false));
+  getPosts("/").then((res) => {
+    posts.value = res;
+    if (sessionStorage.getItem("activeIndex") === null) {
+      activeIndex.value = Object.keys(res)[0];
+    } else {
+      activeIndex.value = sessionStorage.getItem("activeIndex")!;
+    }
+  });
+  // .finally(() => (loading.value = false));
 });
 
 useHead({
@@ -101,3 +110,21 @@ useHead({
   ],
 });
 </script>
+
+<style scoped>
+.skeleton {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
