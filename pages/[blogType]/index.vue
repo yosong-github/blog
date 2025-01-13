@@ -41,7 +41,7 @@
       <div
         class="flex justify-between items-start my-2 py-2 cursor-pointer light:bg-light dark:bg-dark p-4 rounded h-20"
       >
-        <span flex-1 light:bg-light-1 dark:bg-dark-1 h-100%></span>
+        <span flex-1 light:bg-light-1 dark:bg-dark-1 class="h-100%"></span>
         <span
           class="w-100px font-size-12px ml-5 color-#aaa light:bg-light-1 dark:bg-dark-1 h-100%>"
         ></span>
@@ -49,7 +49,7 @@
       <div
         class="flex justify-between items-start my-2 py-2 cursor-pointer light:bg-light dark:bg-dark p-4 rounded h-20"
       >
-        <span flex-1 light:bg-light-1 dark:bg-dark-1 h-100%></span>
+        <span flex-1 light:bg-light-1 dark:bg-dark-1 class="h-100%"></span>
         <span
           class="w-100px font-size-12px ml-5 color-#aaa light:bg-light-1 dark:bg-dark-1 h-100%>"
         ></span>
