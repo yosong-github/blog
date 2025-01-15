@@ -65,7 +65,7 @@ index.html
 </html>
 ```
 
-`<app-component style="height: 100%"></app-component>` 为自定义的组件。./src/main.js 为项目主入口。
+`app-component` 为自定义的组件。./src/main.js 为项目主入口。
 
 #### 自定义组件
 
