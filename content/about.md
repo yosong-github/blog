@@ -83,7 +83,7 @@
 
 - 邮箱：<a href="mailto:2404559603@qq.com">2404559603@qq.com</a>
 - 电话（微信同号）：14781740997
-- github: <a href="https://github.com/yosong-github">https://github.com/yosong-github
+- github: <a href="https://github.com/yosong-github">https://github.com/yosong-github</a
 
 ## 教育经历
 
