@@ -11,7 +11,8 @@
       data-aos="fade-down"
       src="/assets/yosong.png"
       alt="yosong"
-      class="object-cover rounded-full w-102px h-102px m-auto" />
+      class="object-cover rounded-full w-102px h-102px m-auto"
+    />
     <h1 data-aos="fade-down" class="font-size-26px text-center my-8">yosong</h1>
     <p data-aos="fade-down" class="my-6 opacity-50">
       I'm yosong, a front-end developer
@@ -20,37 +21,43 @@
       <img
         class="mx-1 cursor-pointer"
         data-aos="fade-right"
-        src="../assets/javascript.png" />
+        src="../assets/javascript.png"
+      />
       <img
         class="mx-1 cursor-pointer"
         data-aos="fade-right"
-        src="../assets/typescript.png" />
+        src="../assets/typescript.png"
+      />
       <img
         class="mx-1 cursor-pointer"
         data-aos="fade-up"
-        src="../assets/vue.png" />
+        src="../assets/vue.png"
+      />
       <img
         class="mx-1 cursor-pointer"
         data-aos="fade-up"
-        src="../assets/react.png" />
+        src="../assets/react.png"
+      />
       <img
         class="mx-1 cursor-pointer"
         data-aos="fade-left"
-        src="../assets/uniapp.png" />
+        src="../assets/uniapp.png"
+      />
       <img
         class="mx-1 cursor-pointer"
         data-aos="fade-left"
-        src="../assets/python.png" />
+        src="../assets/python.png"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 useHead({
-  title: 'yosong',
+  title: "yosong",
   meta: [
-    { name: 'description', content: 'yosong' },
-    { name: 'keywords', content: 'yosong' },
+    { name: "description", content: "yosong" },
+    { name: "keywords", content: "yosong" },
   ],
-})
+});
 </script>
