@@ -7,17 +7,17 @@ title: 常用的 TS 的特性或者能⼒
 
 ## 1. Utility Types（⼯具类型）：
 
-- Partial<T>: 将类型 T 的所有属性变为可选。
-- Required<T>: 将类型 T 的所有属性变为必选。
-- Readonly<T>: 将类型 T 的所有属性变为只读。
-- Record<K, T>: 创建⼀个具有指定键类型 K 和值类型 T 的新对象类型。
-- Pick<T, K>: 从类型 T 中选择指定属性 K 形成新类型。
-- Omit<T, K>: 从类型 T 中排除指定属性 K 形成新类型。
-- Exclude<T, U>: 从类型 T 中排除可以赋值给类型 U 的类型。
-- Extract<T, U>: 从类型 T 中提取可以赋值给类型 U 的类型。
-- NonNullable<T>: 从类型 T 中排除 null 和 undefined 类型。
-- ReturnType<T>: 获取函数类型 T 的返回类型。
-- Parameters<T>: 获取函数类型 T 的参数类型组成的元组类型。
+- `Partial<T>`: 将类型 T 的所有属性变为可选。
+- `Required<T>`: 将类型 T 的所有属性变为必选。
+- `Readonly<T>`: 将类型 T 的所有属性变为只读。
+- `Record<K, T>`: 创建⼀个具有指定键类型 K 和值类型 T 的新对象类型。
+- `Pick<T, K>`: 从类型 T 中选择指定属性 K 形成新类型。
+- `Omit<T, K>`: 从类型 T 中排除指定属性 K 形成新类型。
+- `Exclude<T, U>`: 从类型 T 中排除可以赋值给类型 U 的类型。
+- `Extract<T, U>`: 从类型 T 中提取可以赋值给类型 U 的类型。
+- `NonNullable<T>`: 从类型 T 中排除 null 和 undefined 类型。
+- `ReturnType<T>`: 获取函数类型 T 的返回类型。
+- `Parameters<T>`: 获取函数类型 T 的参数类型组成的元组类型。
 
 ## 2. 条件判定类型：
 
