@@ -7,7 +7,7 @@
 -->
 <template>
   <div
-    class="flex-center border-t light:bg-white dark:bg-black/70 border-gray-300 p-4 pt-10 font-size-12px pos-sticky bottom-0"
+    class="flex-center border-t light:bg-white dark:bg-black border-gray-300 p-4 pt-10 font-size-12px pos-sticky bottom-0"
   >
     <img src="~/assets/animals.webp" alt="" class="pos-absolute top--48px" />
     <a
