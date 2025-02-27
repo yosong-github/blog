@@ -6,7 +6,10 @@
  * @FilePath: \blog\layouts\cpns\Footer.vue
 -->
 <template>
-  <div class="flex-center border-t border-gray-300 p-4 pt-10 font-size-12px">
+  <div
+    class="flex-center border-t light:bg-white dark:bg-black/70 border-gray-300 p-4 pt-10 font-size-12px pos-sticky bottom-0"
+  >
+    <img src="~/assets/animals.webp" alt="" class="pos-absolute top--48px" />
     <a
       href="https://github.com/yosong-github"
       class="i-bxl-github w-25px h-25px"
