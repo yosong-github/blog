@@ -9,7 +9,11 @@
   <div
     class="flex-center border-t light:bg-white dark:bg-black border-gray-300 p-4 pt-10 font-size-12px pos-sticky bottom-0"
   >
-    <img src="~/assets/animals.webp" alt="" class="pos-absolute top--48px" />
+    <img
+      src="~/assets/animals.webp"
+      alt=""
+      class="pos-absolute top--48px hidden md:block"
+    />
     <a
       href="https://github.com/yosong-github"
       class="i-bxl-github w-25px h-25px"
