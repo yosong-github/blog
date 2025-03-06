@@ -12,7 +12,20 @@ import Footer from './cpns/Footer.vue'
 
 <template>
   <header
-    class="p-1em sticky top-0 border-black/5 bg-white/70 backdrop-blur-xl backdrop-saturate-150 dark:border-white/50 dark:bg-black/70 dark:text-white z-50">
+    p-1em
+    sticky
+    top-0
+    border-black
+    bg-white
+    backdrop-blur-xl
+    backdrop-saturate-150
+    dark:border-white
+    border-op-50
+    dark:text-white
+    z-50
+    dark:bg-black
+    bg-op-70
+  >
     <NavBar />
   </header>
   <main class="flex-1 md:w-555px md:m-auto mx-2">

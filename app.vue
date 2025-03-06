@@ -13,24 +13,24 @@
 </template>
 
 <script setup lang="ts">
-const { $aos } = useNuxtApp()
+const { $aos } = useNuxtApp();
 
-const cookie = useCookie('theme', {
+const cookie = useCookie("theme", {
   maxAge: 1000 * 60 * 24 * 30,
-})
+});
 
 useHead(() => {
   return {
     htmlAttrs: {
-      class: cookie.value == 'dark' ? 'dark' : 'light',
+      class: cookie.value == "dark" ? "dark" : "light",
     },
-  }
-})
+  };
+});
 
 onMounted(() => {
   $aos().init({
-    easing: 'ease-in-out-back',
+    easing: "ease-in-out-back",
     duration: 1000,
-  })
-})
+  });
+});
 </script>
