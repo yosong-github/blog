@@ -45,7 +45,7 @@
 /* 加载字体会有闪烁 */
 @font-face {
   font-family: "blog";
-  src: url(./OperatorMonoSSmLigNerdFontAAEOPSLMDI-Book.88ea8017.woff2)
+  src: url(https://fonts.gstatic.com/s/inter/v19/UcCo3FwrK3iLTcviYwY.woff2)
     format("woff2");
 }
 
