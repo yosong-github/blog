@@ -12,7 +12,6 @@ import Footer from './cpns/Footer.vue'
 
 <template>
   <header
-    p-1em
     sticky
     top-0
     border-black
@@ -28,8 +27,8 @@ import Footer from './cpns/Footer.vue'
   >
     <NavBar />
   </header>
-  <main class="flex-1 md:w-555px md:m-auto mx-2">
+  <main class="flex-1 md:w-555px md:m-auto mx-2 pt-16">
     <slot />
   </main>
-  <Footer class="md:w-555px md:m-auto mx-2"></Footer>
+  <Footer class="md:w-555px md:m-auto mx-1"></Footer>
 </template>
