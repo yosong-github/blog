@@ -12,7 +12,5 @@ services:
       - NODE_ENV=production
       - NUXT_HOST=0.0.0.0
       - NUXT_PORT=3000
-    networks:
-      - nuxt-network
     ports:
       - '3000:3000'
