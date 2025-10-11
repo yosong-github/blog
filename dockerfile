@@ -7,13 +7,14 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 
 # 安装依赖
+RUN npm i pnpm --registry=https://registry.npmmirror.com
 RUN pnpm i
 
 # 复制应用代码
 COPY . .
 
 # 构建应用
-RUN npm run build
+RUN pnpm run build
 
 # 生产阶段
 FROM node:21-alpine AS runner
