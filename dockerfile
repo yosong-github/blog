@@ -8,7 +8,8 @@ COPY package.json package-lock.json* ./
 
 
 # 安装依赖
-RUN npm -v \
+RUN node -v \
+    npm -v \
     npm config set registry https://registry.npmmirror.com && \
     npm i -g pnpm && \
     pnpm config set registry https://registry.npmmirror.com && \
