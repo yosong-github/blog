@@ -7,7 +7,7 @@
 -->
 <template>
   <div class="py-10 prose">
-    <ContentDoc path="about" />
+    <ContentDoc style="word-wrap: break-word; font-size: 16px" path="about" />
   </div>
 </template>
 

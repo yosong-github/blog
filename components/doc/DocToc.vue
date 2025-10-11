@@ -6,60 +6,57 @@
  * @FilePath: \components\doc\DocToc.vue
 -->
 <script setup lang="ts">
-import { useEventListener } from "@vueuse/core";
+import { useEventListener } from '@vueuse/core'
 
-const props = defineProps(["toc"]);
-const currentId = ref();
-const offset = 100;
+const props = defineProps(['toc'])
+const currentId = ref()
+const offset = 100
 
 const toTitle = (id: string) => {
-  let titleElement = document.querySelector("#" + id);
-  let contentElement = document.querySelector("html");
+  let titleElement = document.querySelector('#' + id)
+  let contentElement = document.querySelector('html')
 
   if (top && contentElement && titleElement) {
-    let top =
-      titleElement.getBoundingClientRect().top +
-      contentElement.scrollTop -
-      offset;
-    window.scrollTo({ top: top, behavior: "smooth" });
+    let top = titleElement.getBoundingClientRect().top + contentElement.scrollTop - offset
+    window.scrollTo({ top: top, behavior: 'smooth' })
   }
   // 添加锚点值
-  history.pushState(null, "null", "#" + id);
-  currentId.value = id;
-};
+  history.pushState(null, 'null', '#' + id)
+  currentId.value = id
+}
 
 function handleScroll() {
-  const headings = document.querySelectorAll("h2, h3");
+  const headings = document.querySelectorAll('h2, h3')
   for (let i = 0; i < headings.length; i++) {
-    const top = headings[i].getBoundingClientRect().top;
+    const top = headings[i].getBoundingClientRect().top
 
     if (top >= 0 && top <= offset + 20) {
-      currentId.value = headings[i].id;
+      currentId.value = headings[i].id
     }
   }
 }
 
 onMounted(() => {
-  useEventListener(document, "scroll", handleScroll);
+  useEventListener(document, 'scroll', handleScroll)
 
-  window.addEventListener("DOMContentLoaded", function () {
-    let hash = window.location.hash;
+  window.addEventListener('DOMContentLoaded', function () {
+    let hash = window.location.hash
     if (hash) {
-      let target = document.querySelector(hash) as HTMLElement;
+      let target = document.querySelector(hash) as HTMLElement
       if (target) {
         window.scrollTo({
           top: target.offsetTop - offset,
-          behavior: "smooth",
-        });
+          behavior: 'smooth'
+        })
       }
     }
-  });
-});
+  })
+})
 </script>
 
 <template>
   <div
-    class="fixed top-32 lg:left-80% xl:left-75% w-260px hidden lg:block overflow-x-hidden max-h-60% border-s lg:max-w-19.5% xl:max-w-24.5%"
+    class="fixed top-32 lg:left-80% xl:left-75% w-260px hidden lg:block overflow-x-hidden max-h-60% border-l-6 border-Accent lg:max-w-19.5% xl:max-w-24.5%"
   >
     <ul style="padding: 0 1rem; margin: 0; font-size: 0.9rem">
       <li
@@ -69,13 +66,13 @@ onMounted(() => {
       >
         <span
           :class="{
-            'text-Accent': h2.id === currentId,
+            'text-Accent': h2.id === currentId
           }"
           class="cursor-pointer"
           @click="
-            (e) => {
-              e.preventDefault();
-              toTitle(h2.id);
+            e => {
+              e.preventDefault()
+              toTitle(h2.id)
             }
           "
         >
@@ -90,13 +87,13 @@ onMounted(() => {
             >
               <span
                 :class="{
-                  'text-Accent': h3.id === currentId,
+                  'text-Accent': h3.id === currentId
                 }"
                 class="cursor-pointer"
                 @click="
-                  (e) => {
-                    e.preventDefault();
-                    toTitle(h3.id);
+                  e => {
+                    e.preventDefault()
+                    toTitle(h3.id)
                   }
                 "
               >

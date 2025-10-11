@@ -26,16 +26,16 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import useImgPre from "@/hooks/useImgPre";
+import { useRoute } from 'vue-router'
+import useImgPre from '@/hooks/useImgPre'
 
-const route = useRoute();
-const post = route.params.blogType + "/" + route.params.post[0];
-const comment = ref<HTMLDivElement>();
+const route = useRoute()
+const post = route.params.blogType + '/' + route.params.post[0]
+const comment = ref<HTMLDivElement>()
 
-useImgPre();
+useImgPre()
 
-onMounted(() => {});
+onMounted(() => {})
 </script>
 
 <style>

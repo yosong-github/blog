@@ -42,16 +42,14 @@
   background-color: rgb(242, 242, 242) !important;
 } */
 
-/* 加载字体会有闪烁 */
 @font-face {
-  font-family: "blog";
-  src: url(https://fonts.gstatic.com/s/inter/v19/UcCo3FwrK3iLTcviYwY.woff2)
-    format("woff2");
+  font-family: 'blog';
+  src: url(https://at.alicdn.com/t/c/font_3940454_drimor4umam.woff2?t=1753462953608) format('woff2');
 }
 
 /* 使用字体 */
 body {
-  font-family: "blog", sans-serif;
+  font-family: 'blog', sans-serif !important;
 }
 
 html.dark {
