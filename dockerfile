@@ -6,6 +6,9 @@ WORKDIR /app
 # 复制依赖文件
 COPY package.json package-lock.json* ./
 
+# 查看node版本
+RUN node -v
+
 # 安装依赖
 RUN npm config set registry https://registry.npmmirror.com && \
     npm i -g pnpm && \
